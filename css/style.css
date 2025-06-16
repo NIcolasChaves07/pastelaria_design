@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #3a3333;
+  color: #d9d3d3;
+}
+
+/*Estilo do cabeçalho da página */
+.case-pastelaria {
+  background-color: #147a97;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 8px solid #c71212;
+}
+
+.case-pastelaria h1 {
+  font-size: 2.5rem;
+}
+
+.case-pastelaria #openCart {
+  cursor: pointer;
+  border-radius: 5.5px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  padding: 8px;
+  background: #686767;
+  color: #f2f2f2;
+}
+
+/* Estilo do header de cadastro */
+.case-cadastro {
+  display: flex;
+  justify-content: flex-end; /* Envia os botões para a direita */
+  align-items: center; /* Centraliza verticalmente no header */
+  background-color: #147a97; /* Opcional: cor de fundo para visualização */
+  margin-right: 10px;
+}
+
+.case-cadastro button {
+  margin-left: 15px; /* Espaço entre os botões */
+  padding: 8px 16px;
+  border: none;
+  background-color: #3498db; /* Cor azul para o botão */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.case-cadastro button:hover {
+  background-color: #2980b9; /* Cor ao passar o mouse */
+}
+
+/*Estilo do banner da página */
+.banner {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.banner img {
+  max-width: 300px;
+}
+
+/*Estilo da área dos produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.produto {
+  background: black;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.produto img {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.produto h3 {
+  color: #ff7d7d;
+  margin: 0.5rem 0;
+}
+
+.produto p {
+  font-size: 0.9rem;
+}
+
+.produto span {
+  display: block;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+/*Estilo botão de adicionar ao carrinho */
+.adicionar {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #00c896;
+  color: white;
+  text-decoration: none;
+  border-radius: 1rem;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.adicionar:hover {
+  background: #009f76;
+}
+
+/*Estilo do carrinho */
+.carrinho {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 375px;
+  height: 100%;
+  background: black;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 1001;
+}
+
+.carrinho.aberto {
+  right: 0;
+}
+
+.carrinho h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #ff7d7d;
+}
+
+.carrinho .finalizarPedido {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  border-radius: 6.8px;
+  background: #605656;
+  padding: 8.5px 5px;
+  border: none;
+  color: #f2f2f2;
+  font-family: helvetica, sans-serif;
+  font-size: 14.5px;
+  margin-bottom: 10px;
+}
+
+.carrinho .finalizarPedido:hover {
+  background-color: #6d5c5c;
+}
+
+.carrinho #fecharCarrinho {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  border-radius: 6.8px;
+  background: #605656;
+  padding: 8.5px 5px;
+  border: none;
+  color: #f2f2f2;
+  font-family: helvetica, sans-serif;
+  font-size: 14.5px;
+}
+
+.carrinho #fecharCarrinho:hover {
+  background-color: #6d5c5c;
+}
+
+.listaCarrinho {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha */
+  gap: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item-carrinho {
+  display: flex;
+  flex: 1 1 calc(50% - 15px); /* 2 itens por linha, com espaço entre eles */
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  gap: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.item-carrinho img.img-carrinho {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-carrinho h4.nome-carrinho {
+  flex: 1;
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+.item-carrinho p.desc-carrinho {
+  flex: 2;
+  margin: 0 12px;
+  font-size: 14px;
+  color: #ffff;
+}
+
+.item-carrinho .precoCart {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1b8c1b;
+}
+
+#totalCarrinho {
+  font-weight: bold;
+  color: #222;
+}
+
+.totalProductsCart {
+  margin-top: 15px;
+  flex: 1;
+  gap: 10;
+  margin-left: 9.5px;
+  margin-bottom: 10px;
+}
+
+/* Estilo da barra de rolagem */
+input[type="range"] {
+  background-color: black; /* aqui você coloca a cor do seu carrinho */
+  color: black;
+  border-radius: 10px;
+  height: 8px;
+  width: 100%;
+}
+
+/* Se quiser personalizar o "preenchimento" da barra: */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: black; /* mesma cor de fundo */
+  color: black;
+  height: 8px;
+  border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: black; /* cor da bolinha que arrasta */
+  color: black;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -4px; /* ajusta o thumb no meio da faixa */
+  cursor: pointer;
+}
+
+
+/* Estilo do cabeçalho do carrinho */
+.cabecalho-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cabecalho-carrinho img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.bi-trash {
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}
+
+.componentesExtras {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.quantificator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantificator button {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #3d64f1;
+  border: none;
+  color: #f2f2f2;
+}
+
+.quantidadeP {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*Estilo do overlay da página de quando o carrinho está aberto */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.overlay.ativo {
+  display: block;
+}

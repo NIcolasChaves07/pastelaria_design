@@ -1,0 +1,29 @@
+          const produto = event.target.closest(".produto");
+            
+            if (!produto) {
+                console.log("Produto não encontrado: ", produto);
+                return; // para evitar erro ao tentar acessar null
+            } else {
+                console.log("Produto encontrado ", produto);
+            }
+            
+
+            imgTela = `${produto.img}`;
+
+            // const precoTela = parseFloat(precoTex);
+
+            const produtoCart = {
+                imgCart: imgTela,
+                // nomeCart: nometela,
+                // descCart: descTela,
+                // precoCart: precoTela
+            };
+
+            carrinho.push(produtoCart);
+
+            abrirCarrinhoBtnAdicionar();
+
+            const overlay = buscar(".overlay");
+            overlay.classList.add("ativo");
+
+            atualizarCarrinhoVIsual();
