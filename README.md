@@ -95,8 +95,6 @@ XAMPP
 
 WAMP
 
-Laragon
-
 Depois basta acessar o projeto pelo navegador.
 
 📚 Finalidade
